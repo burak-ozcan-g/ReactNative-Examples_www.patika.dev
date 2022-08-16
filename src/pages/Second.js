@@ -1,10 +1,20 @@
 import React from "react";
-import { SafeAreaView, Text } from "react-native";
+import { Button, SafeAreaView, Text } from "react-native";
 
-function Second(){
+function Second(props){
+    console.log(props)
+
+    const username = props.route.params.username;
+
+    function goBackFirst(){
+        props.navigation.goBack()
+    }
+
     return(
         <SafeAreaView>
             <Text>Hello Second</Text>
+            <Button title="Go Back" onPress={goBackFirst}/>
+            <Text>{username}</Text>
         </SafeAreaView>
     )
 }
