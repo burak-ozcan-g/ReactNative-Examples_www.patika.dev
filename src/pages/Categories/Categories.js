@@ -10,7 +10,7 @@ import Error from "../../components/Error";
 
 const Categories = ({ navigation }) => {
     const { error, loading, data } =
-        useFetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+        useFetch(`${Config.API_CATEGORIES}`)
         
     const renderCategories = ({ item }) =>
         <CategoriesCard categories={item}

@@ -11,7 +11,7 @@ const MealsCard = ({ meals, onSelect }) => {
                     source={{ uri: meals.strMealThumb }}
                 >
                     <View style={styles.textView}>
-                        <Text style={styles.text}> {meals.strMeal} </Text>
+                        <Text numberOfLines={1} style={styles.text}> {meals.strMeal} </Text>
                     </View>
                 </ImageBackground>
             </View>

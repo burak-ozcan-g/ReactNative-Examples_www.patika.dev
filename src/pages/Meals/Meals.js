@@ -10,7 +10,7 @@ import Error from "../../components/Error";
 const Meals = ({ route, navigation }) => {
     const { strCategory } = route.params;
     const { error, loading, data } =
-        useFetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${strCategory}`)
+        useFetch(`${Config.API_MEALS}${strCategory}`)
 
     
 

@@ -10,7 +10,7 @@ import DetailCard from '../../components/DetailsCard'
 const Details = ({ route }) => {
     const { idMeal } = route.params;
     const { error, loading, data } =
-        useFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
+        useFetch(`${Config.API_DETAIL}${idMeal}`)
 
     const renderDetail = ({ item }) => <DetailCard details={item}
         onSelect={() => Linking.openURL(item.strYoutube)}
@@ -24,7 +24,7 @@ const Details = ({ route }) => {
     }
 
     return (
-        <SafeAreaView >
+        <SafeAreaView style={styles.container} >
             <FlatList
                 data={data.meals}
                 renderItem={renderDetail}
